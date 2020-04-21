@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportGeneration>
+<Id>1</Id>
+<ReportOutputName>CustomerDetailsReport</ReportOutputName>
+
+<CustomerReportParameters  HeaderBgColor="Green" DataBgColor="#FFF000">
+         <Column TitleName="CUSTOMER ID" FieldName="getCustomerId" HeaderAlign="Center" DataAlign="Right"></Column>
+         <Column TitleName="NAME" FieldName="getName" ></Column>
+         <Column TitleName="EMAIL ID" FieldName="getEamilId"></Column>
+         <Column TitleName="MOBILE_NO" FieldName="getMobileNo" ></Column>
+         <Column TitleName="ADDRESS" FieldName="getAddress"></Column>
+         <Column TitleName="PAN_NO" FieldName="getPanNo"></Column> 
+</CustomerReportParameters>
+
+<ReportOutputName>GrantDetailsReport</ReportOutputName>
+
+<GrantDetailsReportParameters  HeaderBgColor="Green" DataBgColor="White">
+        <Column TitleName="GRANT ID" FieldName="Grant ID" HeaderAlign="Center" DataAlign="Right"></Column>
+         <Column TitleName="GRANT CODE" FieldName="Grant Code"></Column>
+         <Column TitleName="GRANT NAME" FieldName="Grant Name " ></Column>
+         <Column TitleName="GRANT STATUS" FieldName="GrantStatus"></Column>
+         <Column TitleName="GRANT TYPE" FieldName="Grant Type" ></Column>
+         <Column TitleName="CREATED BY" FieldName="Created By"></Column>
+         <Column TitleName="CREATED DATE" FieldName="Created Date"></Column>
+         <Column TitleName="PENDING DATE" FieldName="Pending Date"></Column>
+         <Column TitleName="PENDING BY" FieldName="Pending With"></Column>
+</GrantDetailsReportParameters> 
+</ReportGeneration>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{requestId} %X{sessionId} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+		<File name="RandomAccessFile" fileName="C:/Utility/log4j2util/logs/digibank/AppDataMgmt.log">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{requestId} %X{sessionId} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		
+	 	<File name="PayloadTraceLog" fileName="C:/Utility/log4j2util/logs/digibank/AppDataMgmtpayload.log">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{requestId} %X{sessionId} [%t] %-5level %logger{36} - %msg%n" />
+		</File>	 
+		
+		<File name="EntryExitLog" fileName="C:/Utility/log4j2util/logs/digibank/AppDataEntryExit.log">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{requestId} %X{sessionId} [%t] %-5level %logger{36} - %msg%n" />
+		</File>	
+		
+		<File name="PerformanceLog" fileName="C:/Utility/log4j2util/logs/digibank/AppDataMgmtPerformance.log">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{requestId} %X{sessionId} [%t] %-5level %logger{36} - %msg%n" />
+		</File>	
+		
+		<File name="ExceptionLog" fileName="C:/Utility/log4j2util/logs/digibank/AppDataMgmtException.log">
+			<PatternLayout
+				pattern="%d{ISO8601} %X{USER_ID} %X{requestId} %X{sessionId} [%t] %-5level %logger{36} - %msg%n" />
+		</File>	
+	</Appenders>
+	<Loggers>		 
+		<Logger name="com.mea" additivity="false">			            
+			<AppenderRef ref="RandomAccessFile" level="debug" />
+			<AppenderRef ref="Console" />			        
+		</Logger>
+		
+		<Logger name="com.mea.tcs.digibank.PayloadLoggingFilter"	additivity="false">			            
+			<AppenderRef ref="PayloadTraceLog" level="debug" />
+			<AppenderRef ref="Console" />			        
+		</Logger> 
+		
+		<Logger name="com.mea.tcs.digibank.aspect.EntryExitLoggingAspect"	additivity="false">			            
+			<AppenderRef ref="EntryExitLog" level="debug" />
+			<AppenderRef ref="Console" />			        
+		</Logger>
+		
+		<Logger name="com.mea.tcs.digibank.aspect.PerformanceLoggingAspect"	additivity="false">			            
+			<AppenderRef ref="PerformanceLog" level="debug" />
+			<AppenderRef ref="Console" />			        
+		</Logger>
+		
+		<Logger name="com.mea.tcs.digibank.aspect.ExceptionLoggingAspect"	additivity="false">			            
+			<AppenderRef ref="ExceptionLog" level="debug" />
+			<AppenderRef ref="Console" />			        
+		</Logger>
+
+		<Root level="DEBUG" includeLocation="false">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
